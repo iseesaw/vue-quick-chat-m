@@ -1,11 +1,48 @@
-# vue-quick-chat
+# vue-quick-chat-m
 This vue component is a simple chat that can be easily imported and used in your project.
 
-:boom: `vue-quick-chat-m` is modified based on vue-quick-chat. Just modify the `MessageDisplay.vue`, including adding avatar and updating username and message text.
+:boom: **Updated**
+
+> Just modify `components/MessageDisplay.vue`.
+
+- Done
+    - [x] add avatar property
+    - [x] modify username's style
+
+- Added Component Props
+
+| name | type | required |default |description |
+|------|------|----------|--------|------------|
+| displayUsername | Boolean | false | true | This prop describes whether the username should be displayed or not |
+| avatar | Object | false |	{ size: "small / medium / large", <br> shape: "square / circle"} | Object with the description of the size and shape of avatar |
+
+```javascript
+...
+participants: [
+    {
+        name: 'Arnaldo',
+        id: 1,
+        avatar: 'url'
+    },
+    {
+        name: 'José',
+        id: 2,
+        avatar: 'url'
+    }
+],
+myself: {
+    name: 'Matheus S.',
+    id: 3, 
+    avatar: 'url'
+},
+...
+```
+
+- Images
 
 | `vue-quick-chat` | `vue-quick-chat-m`(Our) |
 | -- | -- |
-| <img src="https://user-images.githubusercontent.com/42742621/63946619-c3eda480-ca4b-11e9-82f0-b7636eace98d.png"/> | <img src="https://user-images.githubusercontent.com/42742621/63946619-c3eda480-ca4b-11e9-82f0-b7636eace98d.png"/> |
+| <img src="https://user-images.githubusercontent.com/42742621/63946619-c3eda480-ca4b-11e9-82f0-b7636eace98d.png"  height="500px" width="350px"/> | <img src="https://user-images.githubusercontent.com/31267864/73910654-ec2ada80-48ea-11ea-95fa-97aa5b4f67ed.png" height="500px" width="350px"/> |
 
 --------------
 ## Features

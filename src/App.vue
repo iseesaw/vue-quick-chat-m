@@ -19,7 +19,9 @@
                       :load-more-messages="toLoad.length > 0 ? loadMoreMessages : null"
                       :async-mode="asyncMode"
                       :scroll-bottom="scrollBottom"
-                      :display-header="false"/>
+                      :display-header="displayHeader"
+                      :display-username="displayUsername"
+                      :avatar="avatar"/>
             </div>
             <div class="external-controller">
                 <div class="controller-btn-container">
@@ -64,7 +66,7 @@
                 ],
                 myself: {
                     name: 'John Doe',
-                    avatar: '../assets/logo.png',
+                    avatar: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1937351879,3140249298&fm=26&gp=0.jpg',
                     id: 3
                 },
                 messages: [
@@ -164,6 +166,12 @@
                 scrollBottom: {
                     messageSent: true,
                     messageReceived: false
+                },
+                displayHeader: true,
+                displayUsername: true,
+                avatar: {
+                    size: 'medium',
+                    shape: 'circle' 
                 }
             }
         },
@@ -310,7 +318,7 @@
         background: rgb(247, 243, 243);
         padding: 10px 0 10px 0;
         height: 500px;
-        width: 500px;
+        width: 350px;
     }
 
     .external-controller {

@@ -1,15 +1,27 @@
 <template>
     <div class="quick-chat-container"
          :style="{'border-bottom-left-radius': borderStyle.bottomLeft, 'border-bottom-right-radius': borderStyle.bottomRight, 'border-top-right-radius': borderStyle.topRight, 'border-top-left-radius': borderStyle.topLeft}">
-        <Header v-if="displayHeader" :colors="colors" :border-style="borderStyle" 
-                :hide-close-button="hideCloseButton" :close-button-icon-size="closeButtonIconSize" :on-close="onClose">
+        <Header v-if="displayHeader" 
+                :colors="colors" 
+                :border-style="borderStyle" 
+                :hide-close-button="hideCloseButton" 
+                :close-button-icon-size="closeButtonIconSize" 
+                :on-close="onClose">
             <template #header>
                 <slot name="header"></slot>
             </template>
         </Header>
-        <MessageDisplay :colors="colors" :async-mode="asyncMode" :load-more-messages="loadMoreMessages" :scroll-bottom="scrollBottom"/>
-        <MessageManager :on-type="onType" :on-message-submit="onMessageSubmit" :colors="colors"
-                        :border-style="borderStyle" :submit-icon-size="submitIconSize"/>
+        <MessageDisplay :colors="colors" 
+                        :async-mode="asyncMode" 
+                        :load-more-messages="loadMoreMessages" 
+                        :scroll-bottom="scrollBottom"
+                        :display-username="displayUsername"
+                        :avatar="avatar"/>
+        <MessageManager :on-type="onType" 
+                        :on-message-submit="onMessageSubmit" 
+                        :colors="colors"
+                        :border-style="borderStyle" 
+                        :submit-icon-size="submitIconSize"/>
     </div>
 </template>
 
@@ -28,6 +40,16 @@
             MessageManager
         },
         props: {
+            avatar: {
+                type: Object,
+                required: false,
+                default: () => {
+                    return {
+                        size: 'medium',
+                        shape: 'square'
+                    }
+                }
+            },
             participants: {
                 type: Array,
                 required: true
@@ -117,6 +139,11 @@
                 }
             },
             displayHeader: {
+                type: Boolean,
+                required: false,
+                default: true
+            },
+            displayUsername: {
                 type: Boolean,
                 required: false,
                 default: true

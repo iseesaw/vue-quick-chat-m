@@ -8,10 +8,16 @@
             <p class="time">
                 <span>{{message.timestamp.format('LT')}}</span>
             </p>
-            <p v-if="!message.myself" class="message-username">{{getParticipantById(message.participantId).name}}</p>
-            <p v-else class="message-username" :class="{'myself-username': message.myself}">{{myself.name}}</p>
+            <template v-if="displayUsername">
+                <p v-if="!message.myself" class="message-username">{{getParticipantById(message.participantId).name}}</p>
+                <p v-else class="message-username" :class="{'myself-username': message.myself}">{{myself.name}}</p>
+            </template>
             <div class="main" :class="{ self: message.myself }">
-                <img class="avatar" width="30" height="30" src="https://cn.vuejs.org/images/logo.png">
+                <el-avatar 
+                    class="avatar" 
+                    :size="avatar.size" 
+                    :shape="avatar.shape" 
+                    :src="message.myself ? myself.avatar : getParticipantById(message.participantId).avatar "/>
                 <div class="text"
                      :style="{background: !message.myself ? colors.message.others.bg : colors.message.myself.bg, color: !message.myself ? colors.message.others.text : colors.message.myself.text}">
                     {{message.content}}
@@ -22,10 +28,25 @@
 </template>
 
 <script>
+    import {Avatar} from 'element-ui';
+    import 'element-ui/lib/theme-chalk/index.css';
     import {mapGetters, mapMutations} from 'vuex';
 
     export default {
+          components: {
+           'el-avatar': Avatar
+        },
         props: {
+            avatar: {
+                type: Object,
+                required: false,
+                default: () => {
+                    return {
+                        size: 'medium',
+                        shape: 'square'
+                    }
+                }
+            },
             colors: {
                 type: Object,
                 required: true
@@ -43,6 +64,11 @@
             scrollBottom: {
                 type: Object,
                 required: true
+            },
+            displayUsername: {
+                type: Boolean,
+                required: false,
+                default: true
             }
         },
         data() {
@@ -261,7 +287,6 @@
         .avatar {
             float: left;
             margin: 0 5px 0 5px;
-            border-radius: 3px;
         }
         .text {
             display: inline-block;
