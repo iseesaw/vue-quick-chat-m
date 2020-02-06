@@ -1,5 +1,5 @@
 # vue-quick-chat-m
-This vue component is a simple chat that can be easily imported and used in your project.
+Modified for own project based on [MatheusrdSantos/vue-quick-chat](https://github.com/MatheusrdSantos/vue-quick-chat).
 
 :boom: **Updated**
 
@@ -45,6 +45,9 @@ myself: {
 | <img src="https://user-images.githubusercontent.com/42742621/63946619-c3eda480-ca4b-11e9-82f0-b7636eace98d.png"  height="500px" width="350px"/> | <img src="https://user-images.githubusercontent.com/31267864/73910654-ec2ada80-48ea-11ea-95fa-97aa5b4f67ed.png" height="500px" width="350px"/> |
 
 --------------
+--------------
+*origin readme*
+
 ## Features
 - Custom style
 - Handle on type event and on message submit 
