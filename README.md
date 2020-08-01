@@ -14,6 +14,7 @@ Modified for own project based on [MatheusrdSantos/vue-quick-chat](https://githu
 | name | type | required |default |description |
 |------|------|----------|--------|------------|
 | displayUsername | Boolean | false | true | This prop describes whether the username should be displayed or not |
+| displayTime | Boolean | false | true | This prop describes whether the time should be displayed or not |
 | avatar | Object | false |	{ size: "small / medium / large", <br> shape: "square / circle"} | Object with the description of the size and shape of avatar |
 
 ```javascript

@@ -16,6 +16,7 @@
                         :load-more-messages="loadMoreMessages" 
                         :scroll-bottom="scrollBottom"
                         :display-username="displayUsername"
+                        :display-time="displayTime"
                         :avatar="avatar"/>
         <MessageManager :on-type="onType" 
                         :on-message-submit="onMessageSubmit" 
@@ -147,7 +148,12 @@
                 type: Boolean,
                 required: false,
                 default: true
-            }
+            },
+			displayTime: {
+				type: Boolean,
+				required: false,
+				default: true
+			}
         },
         watch: {
             participants() {

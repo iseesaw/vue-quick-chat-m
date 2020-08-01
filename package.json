@@ -1,6 +1,6 @@
 {
   "name": "vue-quick-chat-m",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "private": false,
   "main": "./dist/vue-quick-chat.common.js",
   "files": [
@@ -8,7 +8,8 @@
     "src/*",
     "public/*",
     "*.json",
-    "*.js"
+    "*.js",
+	"*.css"
   ],
   "author": "iseesaw <minekaiyan@gmail.com>",
   "license": "MIT",
@@ -19,7 +20,7 @@
     "vuejs",
     "simple-chat"
   ],
-  "repository": "https://github.com/MatheusrdSantos/vue-quick-chat",
+  "repository": "https://github.com/iseesaw/vue-quick-chat-m",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

@@ -21,6 +21,7 @@
                       :scroll-bottom="scrollBottom"
                       :display-header="displayHeader"
                       :display-username="displayUsername"
+                      :display-time="displayTime"
                       :avatar="avatar"/>
             </div>
             <div class="external-controller">
@@ -169,6 +170,7 @@
                 },
                 displayHeader: true,
                 displayUsername: true,
+				displayTime: true,
                 avatar: {
                     size: 'medium',
                     shape: 'circle' 
