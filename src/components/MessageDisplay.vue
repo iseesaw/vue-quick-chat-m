@@ -313,7 +313,7 @@
 			max-width: ~'calc(100% - 70px)';
 			min-height: 30px;
 			line-height: 2.5;
-			font-size: 14px;
+			font-size: 16px;
 			text-align: left;
 			word-break: break-all;
 			background-color: #fafafa;

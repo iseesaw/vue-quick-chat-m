@@ -18,7 +18,8 @@
                         :display-username="displayUsername"
                         :display-time="displayTime"
                         :avatar="avatar"/>
-        <MessageManager :on-type="onType" 
+        <MessageManager v-if="displayInput"
+						:on-type="onType" 
                         :on-message-submit="onMessageSubmit" 
                         :colors="colors"
                         :border-style="borderStyle" 
@@ -150,6 +151,11 @@
                 default: true
             },
 			displayTime: {
+				type: Boolean,
+				required: false,
+				default: true
+			},
+			displayInput: {
 				type: Boolean,
 				required: false,
 				default: true
